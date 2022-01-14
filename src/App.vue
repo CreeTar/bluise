@@ -1,44 +1,28 @@
 <template>
-	<div id="app">
-		<v-app>
-			<v-tabs horizontal background-color="#efefef" color="success">
-				<v-tabs-slider />
-				<v-tab href="#tab-home">Home</v-tab>
-				<v-tab href="#tab-apisettings">API-Settings</v-tab>
-
-				<v-tab-item value="tab-home">
-					<v-container fill-height fluid>
-						<v-row justify="center" align="center">
-							<v-col>...</v-col>
-						</v-row>
-					</v-container>
-				</v-tab-item>
-
-				<v-tab-item value="tab-apisettings">
-					<ApiSettings />
-				</v-tab-item>
-			</v-tabs>
-		</v-app>
-	</div>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
-import ApiSettings from '@/components/ApiSettings';
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-	name: 'App',
-	components: {
-		ApiSettings
-	}
-};
+  name: 'App',
+  components: {
+    HelloWorld
+  }
+}
 </script>
 
 <style>
 #app {
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
