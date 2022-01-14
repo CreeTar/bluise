@@ -22,10 +22,8 @@ export default {
     msg: String
   },
   computed: {
-    getPrice: () => {
-      fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=EUR').then(async (response) => {
-        this.msg = await response.json();
-      });
+    getPrice: async () => {
+      return (await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=EUR')).json();
     }
   }
 }
