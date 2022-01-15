@@ -26,7 +26,7 @@
         <th>Coin</th>
         <th>Amount</th>
       </tr>
-      <tr v-for="asset in Object.keys(superChargerRewards)" style="font-family: Consolas; font-size: 10pt;">
+      <tr v-for="asset in Object.keys(superChargerRewards)" style="font-family: Consolas; font-size: 10pt;" v-bind:key="asset">
         <td>{{ asset }}</td>
         <td>{{ superChargerRewards[asset] }}</td>
       </tr>
@@ -89,7 +89,8 @@ export default {
     async parseCryptoTransactionsRecords(file) {
       const content = (await this.getFileContent(file)).toString();
       const lines = content.split('\n')
-      const header = lines.shift();
+      // const header = lines.shift();
+      lines.shift();
       const entries = lines.map((line) => line.split(','))
 
       const idxDesc = 1;
