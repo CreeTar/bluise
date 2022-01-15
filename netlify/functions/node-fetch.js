@@ -2,18 +2,21 @@ const fetch = require('node-fetch')
 
 const handler = async function () {
   try {
+    console.log("fetch tickers")
     const response = await fetch('https://api.crypto.com/v2/public/get-ticker', {
       headers: { Accept: 'application/json' },
     })
     if (!response.ok) {
-      // NOT res.status >= 200 && res.status < 300
+      console.log("response not OK: " + response.statusText)
       return { statusCode: response.status, body: response.statusText }
     }
+    
+    console.log("response OK")
     const json = await response.json()
 
     return {
       statusCode: 200,
-      body: JSON.stringify(json.data),
+      body: JSON.stringify(json),
     }
   } catch (error) {
     console.log(error)
