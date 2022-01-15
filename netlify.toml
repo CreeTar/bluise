@@ -1,0 +1,14 @@
+# Config for the Netlify Build Plugin: netlify-plugin-fetch-feeds
+[[plugins]]
+  package = "netlify-plugin-fetch-feeds"
+
+  [plugins.inputs]
+    # Where should data files reside
+    dataDir = "site/_data"
+
+    # All the feeds we wish to gather for use in the build
+
+    [[plugins.inputs.feeds]]
+      name = "crypto.com"
+      url = "https://api.crypto.com/v2/public/get-ticker"
+      ttl = 36000

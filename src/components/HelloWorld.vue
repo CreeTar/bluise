@@ -44,6 +44,7 @@ export default {
     }
   },
   created() {
+    var connection = new WebSocket('wss://stream.crypto.com/v2/market', ['soap', 'xmpp']);
     fetch('https://api.crypto.com/v2/public/get-ticker').then((response) => {
       this.tickerData = response.json();
     });
